@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Register</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="login-container">
+
+    <div class="login-box">
+
+        <h1>Create Account</h1>
+
+        <p>Join Career Path Reality Checker</p>
+
+        <form action="/register" method="POST">
+
+            <input
+                type="text"
+                name="name"
+                placeholder="Full Name"
+                required>
+
+            <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                required>
+
+            <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                required>
+
+            <button type="submit">
+
+                Register
+
+            </button>
+
+        </form>
+
+        <p class="register-link">
+
+            Already have an account?
+
+            <a href="/login">
+
+                Login
+
+            </a>
+
+        </p>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

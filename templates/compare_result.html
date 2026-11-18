@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Degree Comparison</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+
+    <div class="sidebar">
+
+    <h2>Career Checker</h2>
+
+    <a href="/dashboard">
+        <i class="fa-solid fa-house"></i>
+        <span>Dashboard</span>
+    </a>
+
+    <a href="/resume">
+        <i class="fa-solid fa-file"></i>
+        <span>Resume Analyzer</span>
+    </a>
+
+    <a href="/degree_compare" class="active">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <span>Compare Degrees</span>
+    </a>
+
+    <a href="/career_advisor">
+        <i class="fa-solid fa-robot"></i>
+        <span>AI Career Advisor</span>
+    </a>
+
+    <a href="/job_market">
+        <i class="fa-solid fa-chart-column"></i>
+        <span>Job Market Trends</span>
+    </a>
+
+    <a href="/roadmap">
+        <i class="fa-solid fa-map"></i>
+        <span>Learning Roadmap</span>
+    </a>
+
+    <a href="/career-gap">
+        <i class="fa-solid fa-chart-line"></i>
+        <span>Career Gap Analyzer</span>
+    </a>
+
+    <a href="/profile">
+        <i class="fa-solid fa-user"></i>
+        <span>Profile</span>
+    </a>
+
+    <a href="/logout">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        <span>Logout</span>
+    </a>
+
+</div>
+
+
+    <!-- Main -->
+
+    <div class="main">
+
+        <h1>🎓 AI Degree Comparison Report</h1>
+
+        <!-- Degree Cards -->
+
+        <div class="compare-grid">
+
+            <div class="compare-card">
+
+                <h2>{{ degree1 }}</h2>
+
+            </div>
+
+            <div class="compare-card">
+
+                <h2>{{ degree2 }}</h2>
+
+            </div>
+
+        </div>
+
+        <!-- Overview -->
+
+        <div class="section">
+
+            <h2>📖 Overview</h2>
+
+            <table class="compare-table">
+
+                <tr>
+
+                    <th>{{ degree1 }}</th>
+                    <th>{{ degree2 }}</th>
+
+                </tr>
+
+                <tr>
+
+                    <td>{{ data.overview.degree1 }}</td>
+                    <td>{{ data.overview.degree2 }}</td>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+        <!-- Subjects -->
+
+        <div class="section">
+
+            <h2>📚 Subjects</h2>
+
+            <div class="compare-grid">
+
+                <div class="compare-card">
+
+                    <h3>{{ degree1 }}</h3>
+
+                    <ul>
+
+                    {% for item in data.subjects.degree1 %}
+
+                        <li>{{ item }}</li>
+
+                    {% endfor %}
+
+                    </ul>
+
+                </div>
+
+                <div class="compare-card">
+
+                    <h3>{{ degree2 }}</h3>
+
+                    <ul>
+
+                    {% for item in data.subjects.degree2 %}
+
+                        <li>{{ item }}</li>
+
+                    {% endfor %}
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Programming -->
+
+        <div class="section">
+
+            <h2>💻 Programming Languages</h2>
+
+            <div class="compare-grid">
+
+                <div class="compare-card">
+
+                    <ul>
+
+                    {% for item in data.languages.degree1 %}
+
+                    <li>{{ item }}</li>
+
+                    {% endfor %}
+
+                    </ul>
+
+                </div>
+
+                <div class="compare-card">
+
+                    <ul>
+
+                    {% for item in data.languages.degree2 %}
+
+                    <li>{{ item }}</li>
+
+                    {% endfor %}
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Career -->
+
+        <div class="section">
+
+            <h2>💼 Career Opportunities</h2>
+
+            <div class="compare-grid">
+
+                <div class="compare-card">
+
+                    <ul>
+
+                    {% for item in data.career.degree1 %}
+
+                    <li>{{ item }}</li>
+
+                    {% endfor %}
+
+                    </ul>
+
+                </div>
+
+                <div class="compare-card">
+
+                    <ul>
+
+                    {% for item in data.career.degree2 %}
+
+                    <li>{{ item }}</li>
+
+                    {% endfor %}
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Higher Studies -->
+
+        <div class="section">
+
+            <h2>🎓 Higher Studies</h2>
+
+            <div class="compare-grid">
+
+                <div class="compare-card">
+
+                    <ul>
+
+                    {% for item in data.higher_studies.degree1 %}
+
+                    <li>{{ item }}</li>
+
+                    {% endfor %}
+
+                    </ul>
+
+                </div>
+
+                <div class="compare-card">
+
+                    <ul>
+
+                    {% for item in data.higher_studies.degree2 %}
+
+                    <li>{{ item }}</li>
+
+                    {% endfor %}
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Salary -->
+
+        <div class="section">
+
+            <h2>💰 Average Salary</h2>
+
+            <table class="compare-table">
+
+                <tr>
+
+                    <th>{{ degree1 }}</th>
+
+                    <th>{{ degree2 }}</th>
+
+                </tr>
+
+                <tr>
+
+                    <td>{{ data.salary.degree1 }}</td>
+
+                    <td>{{ data.salary.degree2 }}</td>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+        <!-- Advantages -->
+
+        <div class="section">
+
+            <h2>✅ Advantages</h2>
+
+            <div class="compare-grid">
+
+                <div class="compare-card">
+
+                    <ul>
+
+                    {% for item in data.advantages.degree1 %}
+
+                    <li>{{ item }}</li>
+
+                    {% endfor %}
+
+                    </ul>
+
+                </div>
+
+                <div class="compare-card">
+
+                    <ul>
+
+                    {% for item in data.advantages.degree2 %}
+
+                    <li>{{ item }}</li>
+
+                    {% endfor %}
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Disadvantages -->
+
+        <div class="section">
+
+            <h2>❌ Disadvantages</h2>
+
+            <div class="compare-grid">
+
+                <div class="compare-card">
+
+                    <ul>
+
+                    {% for item in data.disadvantages.degree1 %}
+
+                    <li>{{ item }}</li>
+
+                    {% endfor %}
+
+                    </ul>
+
+                </div>
+
+                <div class="compare-card">
+
+                    <ul>
+
+                    {% for item in data.disadvantages.degree2 %}
+
+                    <li>{{ item }}</li>
+
+                    {% endfor %}
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Recommendation -->
+
+        <div class="section">
+
+            <h2>🏆 Final Recommendation</h2>
+
+            <div class="compare-card">
+
+                <p><b>Best for Coding:</b> {{ data.recommendation.best_for_coding }}</p>
+
+                <p><b>Best for AI:</b> {{ data.recommendation.best_for_ai }}</p>
+
+                <p><b>Best Salary:</b> {{ data.recommendation.best_salary }}</p>
+
+                <p><b>Best Overall:</b> {{ data.recommendation.best_overall }}</p>
+
+            </div>
+
+        </div>
+
+        <br>
+
+        <a href="/degree_compare" class="btn">🔄 Compare Again</a>
+
+        <a href="/download_degree_report" class="btn">📄 Download PDF</a>
+
+        <button onclick="window.print()" class="btn">🖨 Print</button>
+
+    </div>
+
+</div>
+
+</body>
+</html>

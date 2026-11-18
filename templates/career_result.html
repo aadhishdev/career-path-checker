@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Career Advice</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<div class="sidebar">
+
+    <h2>Career Checker</h2>
+
+    <a href="/dashboard">
+        <i class="fa-solid fa-house"></i>
+        <span>Dashboard</span>
+    </a>
+
+    <a href="/resume">
+        <i class="fa-solid fa-file"></i>
+        <span>Resume Analyzer</span>
+    </a>
+
+    <a href="/degree_compare">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <span>Compare Degrees</span>
+    </a>
+
+    <a href="/career_advisor">
+        <i class="fa-solid fa-robot"></i>
+        <span>AI Career Advisor</span>
+    </a>
+
+    <a href="/job_market">
+        <i class="fa-solid fa-chart-column"></i>
+        <span>Job Market Trends</span>
+    </a>
+
+    <a href="/roadmap">
+        <i class="fa-solid fa-map"></i>
+        <span>Learning Roadmap</span>
+    </a>
+
+    <a href="/career-gap" class="active">
+        <i class="fa-solid fa-chart-line"></i>
+        <span>Career Gap Analyzer</span>
+    </a>
+
+    <a href="/profile">
+        <i class="fa-solid fa-user"></i>
+        <span>Profile</span>
+    </a>
+
+    <a href="/logout">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        <span>Logout</span>
+    </a>
+
+</div>
+
+
+<div class="main career-result">
+
+<h1>🤖 AI Career Advisor</h1>
+
+<h2>{{ degree }}</h2>
+
+<hr>
+
+<h2>💼 Recommended Career Roles</h2>
+
+<ul>
+
+{% for item in data.career_roles %}
+
+<li>{{ item }}</li>
+
+{% endfor %}
+
+</ul>
+
+<hr>
+
+<h2>🛠 Required Skills</h2>
+
+<ul>
+
+{% for item in data.required_skills %}
+
+<li>{{ item }}</li>
+
+{% endfor %}
+
+</ul>
+
+<hr>
+
+<h2>📜 Recommended Certifications</h2>
+
+<ul>
+
+{% for item in data.certifications %}
+
+<li>{{ item }}</li>
+
+{% endfor %}
+
+</ul>
+
+<hr>
+
+<h2>🗺 Learning Roadmap</h2>
+
+<ul>
+
+{% for item in data.roadmap %}
+
+<li>{{ item }}</li>
+
+{% endfor %}
+
+</ul>
+
+<hr>
+
+<h2>💰 Average Salary</h2>
+
+<p>{{ data.salary }}</p>
+
+<hr>
+
+<h2>🏢 Top Companies</h2>
+
+<ul>
+
+{% for item in data.top_companies %}
+
+<li>{{ item }}</li>
+
+{% endfor %}
+
+</ul>
+
+<hr>
+
+<h2>📈 Future Scope</h2>
+
+<p>{{ data.future_scope }}</p>
+
+<hr>
+
+<h2>⭐ Final Advice</h2>
+
+<p>{{ data.final_advice }}</p>
+
+<br>
+
+<a href="/career_advisor" class="btn">
+🔄 Get Another Advice
+</a>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

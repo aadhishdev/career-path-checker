@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+        <h2>Career Checker</h2>
+
+        <a href="/dashboard"
+           class="{% if request.path == '/dashboard' %}active{% endif %}">
+            <i class="fa-solid fa-house"></i>
+            Dashboard
+        </a>
+
+        <a href="/resume"
+           class="{% if request.path == '/resume' %}active{% endif %}">
+            <i class="fa-solid fa-file"></i>
+            Resume Analyzer
+        </a>
+
+        <a href="/degree_compare"
+           class="{% if request.path == '/degree_compare' %}active{% endif %}">
+            <i class="fa-solid fa-graduation-cap"></i>
+            Compare Degrees
+        </a>
+
+        <a href="/career_advisor"
+           class="{% if request.path == '/career_advisor' %}active{% endif %}">
+            <i class="fa-solid fa-robot"></i>
+            AI Career Advisor
+        </a>
+
+        <a href="/job_market"
+           class="{% if request.path == '/job_market' %}active{% endif %}">
+            <i class="fa-solid fa-chart-line"></i>
+            Job Market Trends
+        </a>
+
+        <a href="/roadmap"
+           class="{% if request.path == '/roadmap' %}active{% endif %}">
+            <i class="fa-solid fa-road"></i>
+            Learning Roadmap
+        </a>
+
+        <a href="/career-gap"
+           class="{% if request.path == '/career-gap' %}active{% endif %}">
+            <i class="fa-solid fa-chart-line"></i>
+            Career Gap Analyzer
+        </a>
+
+        <a href="/profile"
+           class="{% if request.path == '/profile' %}active{% endif %}">
+            <i class="fa-solid fa-user"></i>
+            Profile
+        </a>
+
+        <a href="/logout">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Logout
+        </a>
+
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+
+        <div class="topbar">
+
+            <h1>Welcome, {{ username }}</h1>
+
+            <p>Career Path Reality Checker Dashboard</p>
+
+        </div>
+
+        <div class="cards">
+
+            <a href="/resume" style="text-decoration:none;color:inherit;">
+                <div class="card">
+                    <i class="fa-solid fa-file-lines"></i>
+                    <h3>Resume Analyzer</h3>
+                    <p>Upload and analyze your resume.</p>
+                </div>
+            </a>
+
+            <a href="/degree_compare" style="text-decoration:none;color:inherit;">
+                <div class="card">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <h3>Degree Comparison</h3>
+                    <p>Compare careers and salaries.</p>
+                </div>
+            </a>
+
+            <a href="/career_advisor" style="text-decoration:none;color:inherit;">
+                <div class="card">
+                    <i class="fa-solid fa-robot"></i>
+                    <h3>AI Career Advisor</h3>
+                    <p>Get personalized career guidance.</p>
+                </div>
+            </a>
+
+            <a href="/job_market" style="text-decoration:none;color:inherit;">
+                <div class="card">
+                    <i class="fa-solid fa-chart-column"></i>
+                    <h3>Job Market</h3>
+                    <p>View latest demand and salary trends.</p>
+                </div>
+            </a>
+
+            <a href="/roadmap" style="text-decoration:none;color:inherit;">
+                <div class="card">
+                    <i class="fa-solid fa-map"></i>
+                    <h3>Learning Roadmap</h3>
+                    <p>Get a personalized roadmap to build the skills you need.</p>
+                </div>
+            </a>
+
+            <a href="/career-gap" style="text-decoration:none;color:inherit;">
+                <div class="card">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <h3>Career Gap</h3>
+                    <p>Analyze your current skills and find skills you need to develop.</p>
+                </div>
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Degree Comparison</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+
+    <div class="sidebar">
+
+    <h2>Career Checker</h2>
+
+    <a href="/dashboard">
+        <i class="fa-solid fa-house"></i>
+        <span>Dashboard</span>
+    </a>
+
+    <a href="/resume">
+        <i class="fa-solid fa-file"></i>
+        <span>Resume Analyzer</span>
+    </a>
+
+    <a href="/degree_compare" class="active">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <span>Compare Degrees</span>
+    </a>
+
+    <a href="/career_advisor">
+        <i class="fa-solid fa-robot"></i>
+        <span>AI Career Advisor</span>
+    </a>
+
+    <a href="/job_market">
+        <i class="fa-solid fa-chart-column"></i>
+        <span>Job Market Trends</span>
+    </a>
+
+    <a href="/roadmap">
+        <i class="fa-solid fa-map"></i>
+        <span>Learning Roadmap</span>
+    </a>
+
+    <a href="/career-gap">
+        <i class="fa-solid fa-chart-line"></i>
+        <span>Career Gap Analyzer</span>
+    </a>
+
+    <a href="/profile">
+        <i class="fa-solid fa-user"></i>
+        <span>Profile</span>
+    </a>
+
+    <a href="/logout">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        <span>Logout</span>
+    </a>
+
+</div>
+
+    <!-- Main Content -->
+
+    <div class="main">
+
+        <h1>🎓 AI Degree Comparison</h1>
+
+        <p>
+            Search and compare any two degrees using Artificial Intelligence.
+        </p>
+
+        <br>
+
+        <form action="/degree_compare" method="POST">
+
+            <!-- Degree 1 -->
+
+            <label><b>Select Degree 1</b></label>
+
+            <input
+                list="degreeList"
+                name="degree1"
+                class="degree-search"
+                placeholder="Search Degree..."
+                autocomplete="off"
+                required>
+
+            <br><br>
+
+            <!-- Degree 2 -->
+
+            <label><b>Select Degree 2</b></label>
+
+            <input
+                list="degreeList"
+                name="degree2"
+                class="degree-search"
+                placeholder="Search Degree..."
+                autocomplete="off"
+                required>
+
+            <datalist id="degreeList">
+
+                <!-- Engineering -->
+
+                <option value="B.Tech CSE">
+                <option value="B.Tech CSBS">
+                <option value="B.Tech IT">
+                <option value="B.Tech AI & Data Science">
+                <option value="B.Tech Artificial Intelligence">
+                <option value="B.Tech AIML">
+                <option value="B.Tech Cyber Security">
+                <option value="B.Tech Data Science">
+                <option value="B.Tech Robotics">
+                <option value="B.Tech IoT">
+                <option value="B.Tech ECE">
+                <option value="B.Tech EEE">
+                <option value="B.Tech Mechanical">
+                <option value="B.Tech Civil">
+                <option value="B.Tech Automobile">
+                <option value="B.Tech Mechatronics">
+                <option value="B.Tech Chemical">
+                <option value="B.Tech Biotechnology">
+                <option value="B.Tech Food Technology">
+                <option value="B.Tech Textile">
+                <option value="B.Tech Aeronautical">
+                <option value="B.Tech Aerospace">
+                <option value="B.Tech Agricultural Engineering">
+                <option value="B.Tech Petroleum Engineering">
+
+                <!-- Science -->
+
+                <option value="B.Sc Computer Science">
+                <option value="B.Sc Information Technology">
+                <option value="B.Sc Artificial Intelligence">
+                <option value="B.Sc Data Science">
+                <option value="B.Sc Mathematics">
+                <option value="B.Sc Physics">
+                <option value="B.Sc Chemistry">
+                <option value="B.Sc Statistics">
+                <option value="B.Sc Biotechnology">
+                <option value="B.Sc Microbiology">
+                <option value="B.Sc Nursing">
+
+                <!-- Commerce -->
+
+                <option value="B.Com">
+                <option value="B.Com Computer Applications">
+                <option value="B.Com Accounting & Finance">
+                <option value="B.Com Corporate Secretaryship">
+
+                <!-- Business -->
+
+                <option value="BBA">
+                <option value="BBM">
+                <option value="MBA">
+                <option value="MBA Finance">
+                <option value="MBA Marketing">
+                <option value="MBA Human Resource">
+                <option value="MBA Business Analytics">
+
+                <!-- Computer -->
+
+                <option value="BCA">
+                <option value="MCA">
+                <option value="M.Tech Computer Science">
+                <option value="MS Computer Science">
+
+                <!-- Arts -->
+
+                <option value="BA English">
+                <option value="BA Economics">
+                <option value="BA History">
+                <option value="BA Political Science">
+                <option value="BA Psychology">
+
+                <!-- Medical -->
+
+                <option value="MBBS">
+                <option value="BDS">
+                <option value="B.Pharm">
+                <option value="BPT">
+                <option value="BOT">
+
+                <!-- Law -->
+
+                <option value="LLB">
+                <option value="BA LLB">
+                <option value="BBA LLB">
+
+                <!-- Design -->
+
+                <option value="B.Des Fashion Design">
+                <option value="B.Arch">
+                <option value="Interior Design">
+
+            </datalist>
+
+            <br><br><br>
+
+            <button type="submit">
+
+                🔍 Compare Degrees
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

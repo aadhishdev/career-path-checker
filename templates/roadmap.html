@@ -1,0 +1,1721 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Learning Roadmap</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f1f5f9;
+            color: #0f172a;
+        }
+
+        /* ================= SIDEBAR ================= */
+
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 245px;
+            height: 100vh;
+            background: #0f172a;
+            color: white;
+            padding: 25px;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 22px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 14px 5px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .sidebar a:hover {
+            background: #1e293b;
+            color: #38bdf8;
+        }
+
+        /* ================= MAIN ================= */
+
+        .main {
+            margin-left: 245px;
+            padding: 40px;
+            min-height: 100vh;
+        }
+
+        .page-title {
+            font-size: 36px;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: #64748b;
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        /* ================= SELECT BOX ================= */
+
+        .career-selector {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+        }
+
+        .career-selector h2 {
+            color: #2563eb;
+            margin-bottom: 20px;
+        }
+
+        .select-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .select-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #334155;
+        }
+
+        select {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            font-size: 16px;
+            background: white;
+            cursor: pointer;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 5px rgba(37,99,235,.2);
+        }
+
+        /* ================= SELECTED CAREER ================= */
+
+        .career-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .info-box {
+            background: white;
+            padding: 22px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,.08);
+        }
+
+        .info-box small {
+            color: #64748b;
+            font-weight: bold;
+        }
+
+        .info-box h2 {
+            color: #2563eb;
+            margin-top: 8px;
+        }
+
+        /* ================= ROADMAP ================= */
+
+        .roadmap-title {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .roadmap-card {
+            background: white;
+            padding: 28px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            border-left: 5px solid #2563eb;
+            box-shadow: 0 5px 20px rgba(0,0,0,.08);
+        }
+
+        .step-header {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-bottom: 15px;
+        }
+
+        .step-number {
+            min-width: 45px;
+            height: 45px;
+            background: #2563eb;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .step-header h2 {
+            font-size: 22px;
+        }
+
+        .roadmap-card p {
+            color: #475569;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .roadmap-card h3 {
+            margin-top: 15px;
+            margin-bottom: 10px;
+            color: #1e293b;
+        }
+
+        /* ================= TOPICS ================= */
+
+        .topics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .topic {
+            background: #eff6ff;
+            color: #2563eb;
+            padding: 7px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media(max-width:900px) {
+
+            .sidebar {
+                width: 190px;
+            }
+
+            .main {
+                margin-left: 190px;
+                padding: 25px;
+            }
+
+            .select-row,
+            .career-info {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+<!-- ================= SIDEBAR ================= -->
+
+<div class="sidebar">
+
+    <h2>Career Checker</h2>
+
+    <a href="/dashboard">
+        <i class="fa-solid fa-house"></i>
+        <span>Dashboard</span>
+    </a>
+
+    <a href="/resume" >
+        <i class="fa-solid fa-file"></i>
+        <span>Resume Analyzer</span>
+    </a>
+
+    <a href="/degree_compare">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <span>Compare Degrees</span>
+    </a>
+
+    <a href="/career_advisor">
+        <i class="fa-solid fa-robot"></i>
+        <span>AI Career Advisor</span>
+    </a>
+
+    <a href="/job_market">
+        <i class="fa-solid fa-chart-column"></i>
+        <span>Job Market Trends</span>
+    </a>
+
+    <a href="/roadmap" class="active">
+        <i class="fa-solid fa-map"></i>
+        <span>Learning Roadmap</span>
+    </a>
+
+    <a href="/career-gap">
+        <i class="fa-solid fa-chart-line"></i>
+        <span>Career Gap Analyzer</span>
+    </a>
+
+    <a href="/profile">
+        <i class="fa-solid fa-user"></i>
+        <span>Profile</span>
+    </a>
+
+    <a href="/logout">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        <span>Logout</span>
+    </a>
+
+</div>
+
+<!-- ================= MAIN ================= -->
+
+<div class="main">
+
+    <h1 class="page-title">🗺️ Learning Roadmap</h1>
+
+    <p class="subtitle">
+        Select your domain and target job role to get a detailed learning roadmap.
+    </p>
+
+
+    <!-- ================= SELECTOR ================= -->
+
+    <div class="career-selector">
+
+        <h2>Choose Your Career</h2>
+
+        <div class="select-row">
+
+            <div class="select-group">
+
+                <label>Select Domain</label>
+
+                <select id="domain" onchange="updateRoles()">
+
+                    <option value="">Select Domain</option>
+
+                    <option value="computer">Computer Science</option>
+
+                    <option value="data">Data Science</option>
+
+                    <option value="ai">Artificial Intelligence</option>
+
+                    <option value="cyber">Cyber Security</option>
+
+                    <option value="cloud">Cloud Computing</option>
+
+                    <option value="software">Software Engineering</option>
+
+                    <option value="web">Web Development</option>
+
+                    <option value="database">Database</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="select-group">
+
+                <label>Select Job Role</label>
+
+                <select id="role" onchange="showRoadmap()">
+
+                    <option value="">Select Job Role</option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= SELECTED INFORMATION ================= -->
+
+    <div class="career-info">
+
+        <div class="info-box">
+
+            <small>SELECTED DOMAIN</small>
+
+            <h2 id="selectedDomain">
+                Select a domain
+            </h2>
+
+        </div>
+
+
+        <div class="info-box">
+
+            <small>TARGET JOB ROLE</small>
+
+            <h2 id="selectedRole">
+                Select a job role
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <h2 class="roadmap-title">
+        Your Learning Roadmap
+    </h2>
+
+
+    <!-- ================= ROADMAP OUTPUT ================= -->
+
+    <div id="roadmap"></div>
+
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   DOMAIN + JOB ROLE DATA
+===================================================== */
+
+const careerData = {
+
+    computer: {
+
+        name: "Computer Science",
+
+        roles: {
+
+            software: "Software Developer",
+
+            frontend: "Frontend Developer",
+
+            backend: "Backend Developer",
+
+            fullstack: "Full Stack Developer",
+
+            java: "Java Developer"
+
+        }
+
+    },
+
+
+    data: {
+
+        name: "Data Science",
+
+        roles: {
+
+            analyst: "Data Analyst",
+
+            scientist: "Data Scientist",
+
+            engineer: "Data Engineer",
+
+            bi: "Business Intelligence Analyst"
+
+        }
+
+    },
+
+
+    ai: {
+
+        name: "Artificial Intelligence",
+
+        roles: {
+
+            ml: "Machine Learning Engineer",
+
+            ai: "AI Engineer",
+
+            nlp: "NLP Engineer",
+
+            cv: "Computer Vision Engineer"
+
+        }
+
+    },
+
+
+    cyber: {
+
+        name: "Cyber Security",
+
+        roles: {
+
+            analyst: "Cyber Security Analyst",
+
+            ethical: "Ethical Hacker",
+
+            pentest: "Penetration Tester",
+
+            security: "Security Engineer"
+
+        }
+
+    },
+
+
+    cloud: {
+
+        name: "Cloud Computing",
+
+        roles: {
+
+            cloudengineer: "Cloud Engineer",
+
+            devops: "DevOps Engineer",
+
+            architect: "Cloud Architect",
+
+            administrator: "Cloud Administrator"
+
+        }
+
+    },
+
+
+    software: {
+
+        name: "Software Engineering",
+
+        roles: {
+
+            developer: "Software Engineer",
+
+            tester: "Software Tester",
+
+            qa: "QA Engineer",
+
+            automation: "Automation Engineer"
+
+        }
+
+    },
+
+
+    web: {
+
+        name: "Web Development",
+
+        roles: {
+
+            frontend: "Frontend Developer",
+
+            backend: "Backend Developer",
+
+            fullstack: "Full Stack Developer",
+
+            uiux: "UI/UX Developer"
+
+        }
+
+    },
+
+
+    database: {
+
+        name: "Database",
+
+        roles: {
+
+            dba: "Database Administrator",
+
+            developer: "Database Developer",
+
+            analyst: "Database Analyst"
+
+        }
+
+    }
+
+};
+
+
+/* =====================================================
+   ROLE SPECIFIC ROADMAP
+===================================================== */
+
+const roadmapData = {
+
+
+/* ================= FRONTEND ================= */
+
+"Frontend Developer": [
+
+{
+title:"Programming Basics",
+
+description:"Build a strong programming foundation before starting frontend development.",
+
+topics:[
+"Variables",
+"Data Types",
+"Conditions",
+"Loops",
+"Functions",
+"Problem Solving"
+]
+
+},
+
+{
+title:"HTML",
+
+description:"Learn how webpages are structured using HTML.",
+
+topics:[
+"HTML Elements",
+"Headings",
+"Paragraphs",
+"Forms",
+"Tables",
+"Links",
+"Images",
+"Semantic HTML"
+]
+
+},
+
+{
+title:"CSS",
+
+description:"Learn how to design and style webpages.",
+
+topics:[
+"Selectors",
+"Colors",
+"Fonts",
+"Box Model",
+"Margin",
+"Padding",
+"Flexbox",
+"Grid",
+"Responsive Design",
+"Media Queries"
+]
+
+},
+
+{
+title:"JavaScript",
+
+description:"Learn JavaScript to make webpages interactive and dynamic.",
+
+topics:[
+"Variables",
+"Functions",
+"Arrays",
+"Objects",
+"DOM",
+"Events",
+"Forms",
+"Fetch API",
+"Promises",
+"Async/Await"
+]
+
+},
+
+{
+title:"Frontend Framework",
+
+description:"Learn a modern frontend framework for building applications.",
+
+topics:[
+"React.js",
+"Components",
+"Props",
+"State",
+"Hooks",
+"Routing",
+"API Integration"
+]
+
+},
+
+{
+title:"Projects",
+
+description:"Build real-world frontend projects and add them to your portfolio.",
+
+topics:[
+"Login Page",
+"Portfolio",
+"Dashboard",
+"E-Commerce UI",
+"Weather App",
+"Career Website"
+]
+
+},
+
+{
+title:"Job Preparation",
+
+description:"Prepare for frontend developer interviews and placements.",
+
+topics:[
+"HTML Interview Questions",
+"CSS Interview Questions",
+"JavaScript",
+"React",
+"Git",
+"GitHub",
+"Projects",
+"Communication"
+]
+
+}
+
+],
+
+
+/* ================= BACKEND ================= */
+
+"Backend Developer": [
+
+{
+title:"Programming Fundamentals",
+
+description:"Learn programming logic and object-oriented programming.",
+
+topics:[
+"Variables",
+"Loops",
+"Functions",
+"OOP",
+"Arrays",
+"Strings",
+"Exception Handling"
+]
+
+},
+
+{
+title:"Backend Language",
+
+description:"Learn one backend programming language deeply.",
+
+topics:[
+"Java",
+"Python",
+"JavaScript",
+"Classes",
+"Objects",
+"APIs"
+]
+
+},
+
+{
+title:"Databases",
+
+description:"Learn how applications store and retrieve data.",
+
+topics:[
+"MySQL",
+"SQL",
+"Tables",
+"Joins",
+"Queries",
+"Indexes",
+"Transactions"
+]
+
+},
+
+{
+title:"Backend Framework",
+
+description:"Learn a framework for creating backend applications.",
+
+topics:[
+"Node.js",
+"Express.js",
+"Flask",
+"Spring Boot",
+"REST API",
+"Authentication"
+]
+
+},
+
+{
+title:"Frontend + Backend",
+
+description:"Learn how frontend applications communicate with backend servers.",
+
+topics:[
+"HTTP",
+"REST API",
+"JSON",
+"GET",
+"POST",
+"PUT",
+"DELETE",
+"API Integration"
+]
+
+},
+
+{
+title:"Projects",
+
+description:"Build complete backend-based applications.",
+
+topics:[
+"Student Management",
+"Library Management",
+"Login System",
+"REST API",
+"Career Checker",
+"E-Commerce Backend"
+]
+
+},
+
+{
+title:"Job Preparation",
+
+description:"Prepare for backend developer interviews.",
+
+topics:[
+"DSA",
+"SQL",
+"APIs",
+"Git",
+"GitHub",
+"Projects",
+"Problem Solving"
+]
+
+}
+
+],
+
+
+/* ================= FULL STACK ================= */
+
+"Full Stack Developer": [
+
+{
+title:"HTML & CSS",
+
+description:"Learn the fundamentals of creating and designing webpages.",
+
+topics:[
+"HTML",
+"CSS",
+"Forms",
+"Flexbox",
+"Grid",
+"Responsive Design"
+]
+
+},
+
+{
+title:"JavaScript",
+
+description:"Learn JavaScript for frontend functionality.",
+
+topics:[
+"Variables",
+"Functions",
+"Arrays",
+"Objects",
+"DOM",
+"Events",
+"Fetch API",
+"Async/Await"
+]
+
+},
+
+{
+title:"Frontend Framework",
+
+description:"Build modern frontend applications.",
+
+topics:[
+"React.js",
+"Components",
+"Props",
+"State",
+"Hooks",
+"Routing"
+]
+
+},
+
+{
+title:"Backend",
+
+description:"Learn server-side programming and APIs.",
+
+topics:[
+"Node.js",
+"Express.js",
+"Flask",
+"REST API",
+"Authentication",
+"Sessions"
+]
+
+},
+
+{
+title:"Database",
+
+description:"Learn how to store and manage application data.",
+
+topics:[
+"MySQL",
+"MongoDB",
+"SQL",
+"Queries",
+"CRUD",
+"Database Design"
+]
+
+},
+
+{
+title:"Deployment",
+
+description:"Learn how to deploy applications online.",
+
+topics:[
+"Git",
+"GitHub",
+"Hosting",
+"Environment Variables",
+"Cloud Deployment"
+]
+
+},
+
+{
+title:"Full Stack Projects",
+
+description:"Build complete applications using frontend, backend and database technologies.",
+
+topics:[
+"Library Management",
+"Student Management",
+"E-Commerce",
+"Career Platform",
+"Blog Application"
+]
+
+}
+
+],
+
+
+/* ================= DATA ANALYST ================= */
+
+"Data Analyst": [
+
+{
+title:"Programming Basics",
+
+description:"Learn basic programming concepts required for data analysis.",
+
+topics:[
+"Python",
+"Variables",
+"Loops",
+"Functions",
+"Lists",
+"Dictionaries"
+]
+
+},
+
+{
+title:"Statistics",
+
+description:"Understand the mathematical concepts used to analyze data.",
+
+topics:[
+"Mean",
+"Median",
+"Mode",
+"Probability",
+"Standard Deviation",
+"Correlation"
+]
+
+},
+
+{
+title:"SQL",
+
+description:"Learn how to extract and analyze data from databases.",
+
+topics:[
+"SELECT",
+"WHERE",
+"GROUP BY",
+"ORDER BY",
+"JOIN",
+"Subqueries",
+"Aggregate Functions"
+]
+
+},
+
+{
+title:"Data Analysis Tools",
+
+description:"Learn tools used by data analysts.",
+
+topics:[
+"Excel",
+"Python",
+"Pandas",
+"NumPy",
+"Matplotlib"
+]
+
+},
+
+{
+title:"Data Visualization",
+
+description:"Learn how to present data using charts and dashboards.",
+
+topics:[
+"Charts",
+"Graphs",
+"Power BI",
+"Tableau",
+"Dashboards"
+]
+
+},
+
+{
+title:"Projects",
+
+description:"Build projects using real or public datasets.",
+
+topics:[
+"Sales Analysis",
+"Student Analysis",
+"Customer Analysis",
+"Financial Dashboard",
+"COVID Data Analysis"
+]
+
+}
+
+],
+
+
+/* ================= DATA SCIENTIST ================= */
+
+"Data Scientist": [
+
+{
+title:"Python",
+
+description:"Build strong Python programming skills.",
+
+topics:[
+"Python",
+"Functions",
+"OOP",
+"NumPy",
+"Pandas"
+]
+
+},
+
+{
+title:"Statistics",
+
+description:"Learn statistics required for data science.",
+
+topics:[
+"Probability",
+"Mean",
+"Variance",
+"Correlation",
+"Hypothesis Testing"
+]
+
+},
+
+{
+title:"Machine Learning",
+
+description:"Learn how machines learn patterns from data.",
+
+topics:[
+"Regression",
+"Classification",
+"Clustering",
+"Decision Trees",
+"Random Forest",
+"Model Evaluation"
+]
+
+},
+
+{
+title:"Data Visualization",
+
+description:"Understand and visualize datasets.",
+
+topics:[
+"Matplotlib",
+"Seaborn",
+"Power BI",
+"Charts",
+"Dashboards"
+]
+
+},
+
+{
+title:"Projects",
+
+description:"Build machine learning and data science projects.",
+
+topics:[
+"House Price Prediction",
+"Student Performance",
+"Customer Churn",
+"Sales Prediction"
+]
+
+}
+
+],
+
+
+/* ================= MACHINE LEARNING ================= */
+
+"Machine Learning Engineer": [
+
+{
+title:"Python",
+
+description:"Learn Python programming and important libraries.",
+
+topics:[
+"Python",
+"NumPy",
+"Pandas",
+"Functions",
+"OOP"
+]
+
+},
+
+{
+title:"Mathematics",
+
+description:"Learn the mathematical foundations of machine learning.",
+
+topics:[
+"Linear Algebra",
+"Probability",
+"Statistics",
+"Calculus"
+]
+
+},
+
+{
+title:"Machine Learning",
+
+description:"Learn supervised and unsupervised machine learning.",
+
+topics:[
+"Regression",
+"Classification",
+"Clustering",
+"Decision Trees",
+"Random Forest",
+"SVM"
+]
+
+},
+
+{
+title:"Deep Learning",
+
+description:"Learn neural networks and deep learning concepts.",
+
+topics:[
+"Neural Networks",
+"TensorFlow",
+"PyTorch",
+"CNN",
+"RNN"
+]
+
+},
+
+{
+title:"Projects",
+
+description:"Build machine learning applications.",
+
+topics:[
+"Prediction System",
+"Recommendation System",
+"Image Classification",
+"Chatbot"
+]
+
+}
+
+],
+
+
+/* ================= CYBER SECURITY ================= */
+
+"Cyber Security Analyst": [
+
+{
+title:"Networking",
+
+description:"Understand how computer networks communicate.",
+
+topics:[
+"IP Address",
+"DNS",
+"HTTP",
+"TCP/IP",
+"OSI Model",
+"Ports"
+]
+
+},
+
+{
+title:"Operating Systems",
+
+description:"Learn Windows and Linux administration.",
+
+topics:[
+"Linux",
+"Linux Commands",
+"Processes",
+"Permissions",
+"Windows Security"
+]
+
+},
+
+{
+title:"Cyber Security Fundamentals",
+
+description:"Understand common cyber threats and security mechanisms.",
+
+topics:[
+"Malware",
+"Phishing",
+"Password Attacks",
+"Social Engineering",
+"Firewalls"
+]
+
+},
+
+{
+title:"Security Tools",
+
+description:"Learn tools used for security monitoring and testing.",
+
+topics:[
+"Wireshark",
+"Nmap",
+"Burp Suite",
+"SIEM",
+"Logs"
+]
+
+},
+
+{
+title:"Projects",
+
+description:"Practice security concepts in legal and controlled environments.",
+
+topics:[
+"Network Monitoring",
+"Security Audit",
+"Log Analysis",
+"Vulnerability Assessment"
+]
+
+}
+
+],
+
+
+/* ================= CLOUD ================= */
+
+"Cloud Engineer": [
+
+{
+title:"Networking Basics",
+
+description:"Understand networking before learning cloud computing.",
+
+topics:[
+"IP Address",
+"DNS",
+"HTTP",
+"TCP/IP",
+"Ports",
+"Routing"
+]
+
+},
+
+{
+title:"Linux",
+
+description:"Learn Linux system administration.",
+
+topics:[
+"Linux Commands",
+"Files",
+"Processes",
+"Permissions",
+"Shell"
+]
+
+},
+
+{
+title:"Cloud Fundamentals",
+
+description:"Understand how cloud computing works.",
+
+topics:[
+"IaaS",
+"PaaS",
+"SaaS",
+"Virtual Machines",
+"Storage",
+"Networking"
+]
+
+},
+
+{
+title:"Cloud Platform",
+
+description:"Learn at least one major cloud platform.",
+
+topics:[
+"AWS",
+"Microsoft Azure",
+"Google Cloud",
+"Virtual Machines",
+"Cloud Storage"
+]
+
+},
+
+{
+title:"DevOps",
+
+description:"Learn deployment and automation practices.",
+
+topics:[
+"Git",
+"GitHub",
+"CI/CD",
+"Docker",
+"Deployment"
+]
+
+},
+
+{
+title:"Projects",
+
+description:"Build and deploy cloud-based applications.",
+
+topics:[
+"Cloud Hosting",
+"Web Deployment",
+"Cloud Database",
+"Cloud Storage"
+]
+
+}
+
+],
+
+
+/* ================= SOFTWARE ENGINEER ================= */
+
+"Software Engineer": [
+
+{
+title:"Programming",
+
+description:"Build strong programming and problem-solving skills.",
+
+topics:[
+"C",
+"C++",
+"Java",
+"Python",
+"Variables",
+"Loops",
+"Functions"
+]
+
+},
+
+{
+title:"Data Structures",
+
+description:"Learn efficient ways to store and process data.",
+
+topics:[
+"Arrays",
+"Strings",
+"Linked Lists",
+"Stacks",
+"Queues",
+"Trees",
+"Graphs"
+]
+
+},
+
+{
+title:"Algorithms",
+
+description:"Learn algorithms used to solve programming problems.",
+
+topics:[
+"Searching",
+"Sorting",
+"Recursion",
+"Dynamic Programming",
+"Greedy Algorithms"
+]
+
+},
+
+{
+title:"Software Development",
+
+description:"Learn how professional software is developed.",
+
+topics:[
+"Git",
+"GitHub",
+"Testing",
+"Debugging",
+"SDLC",
+"Version Control"
+]
+
+},
+
+{
+title:"Projects",
+
+description:"Create real-world software projects.",
+
+topics:[
+"Management System",
+"Web Application",
+"Mobile Application",
+"API Project"
+]
+
+},
+
+{
+title:"Placement Preparation",
+
+description:"Prepare for software engineering interviews.",
+
+topics:[
+"DSA",
+"SQL",
+"OOP",
+"OS",
+"DBMS",
+"Computer Networks",
+"Aptitude"
+]
+
+}
+
+],
+
+
+/* ================= DATABASE ================= */
+
+"Database Administrator": [
+
+{
+title:"Database Fundamentals",
+
+description:"Understand how databases store and manage information.",
+
+topics:[
+"DBMS",
+"RDBMS",
+"Tables",
+"Rows",
+"Columns",
+"Keys"
+]
+
+},
+
+{
+title:"SQL",
+
+description:"Learn SQL commands for database operations.",
+
+topics:[
+"SELECT",
+"INSERT",
+"UPDATE",
+"DELETE",
+"JOIN",
+"GROUP BY",
+"Subqueries"
+]
+
+},
+
+{
+title:"Database Design",
+
+description:"Learn how to design efficient databases.",
+
+topics:[
+"ER Diagram",
+"Normalization",
+"Relationships",
+"Primary Key",
+"Foreign Key"
+]
+
+},
+
+{
+title:"Database Administration",
+
+description:"Learn how databases are maintained and secured.",
+
+topics:[
+"Backup",
+"Recovery",
+"Users",
+"Permissions",
+"Security",
+"Performance"
+]
+
+},
+
+{
+title:"Projects",
+
+description:"Build database systems and management applications.",
+
+topics:[
+"Student Database",
+"Library Database",
+"Hospital Database",
+"Banking Database"
+]
+
+}
+
+]
+
+};
+
+
+/* =====================================================
+   UPDATE JOB ROLES
+===================================================== */
+
+function updateRoles() {
+
+    const domain = document.getElementById("domain").value;
+
+    const role = document.getElementById("role");
+
+    role.innerHTML = '<option value="">Select Job Role</option>';
+
+    document.getElementById("selectedDomain").innerText =
+        "Select a domain";
+
+    document.getElementById("selectedRole").innerText =
+        "Select a job role";
+
+    document.getElementById("roadmap").innerHTML = "";
+
+    if (domain === "") {
+        return;
+    }
+
+    const roles = careerData[domain].roles;
+
+    for (const key in roles) {
+
+        const option = document.createElement("option");
+
+        option.value = roles[key];
+
+        option.textContent = roles[key];
+
+        role.appendChild(option);
+
+    }
+
+}
+
+
+/* =====================================================
+   SHOW ROADMAP
+===================================================== */
+
+function showRoadmap() {
+
+    const domain = document.getElementById("domain").value;
+
+    const role = document.getElementById("role").value;
+
+    if (domain === "" || role === "") {
+        return;
+    }
+
+    document.getElementById("selectedDomain").innerText =
+        careerData[domain].name;
+
+    document.getElementById("selectedRole").innerText =
+        role;
+
+    const roadmapContainer =
+        document.getElementById("roadmap");
+
+    roadmapContainer.innerHTML = "";
+
+    const roadmap = roadmapData[role];
+
+    if (!roadmap) {
+
+        roadmapContainer.innerHTML = `
+            <div class="roadmap-card">
+                <h2>Roadmap Coming Soon</h2>
+                <p>
+                    A detailed roadmap for ${role}
+                    will be added soon.
+                </p>
+            </div>
+        `;
+
+        return;
+    }
+
+
+    roadmap.forEach((step, index) => {
+
+        let topicsHTML = "";
+
+        step.topics.forEach(topic => {
+
+            topicsHTML += `
+                <span class="topic">
+                    ${topic}
+                </span>
+            `;
+
+        });
+
+
+        roadmapContainer.innerHTML += `
+
+            <div class="roadmap-card">
+
+                <div class="step-header">
+
+                    <div class="step-number">
+                        ${index + 1}
+                    </div>
+
+                    <h2>
+                        ${step.title}
+                    </h2>
+
+                </div>
+
+                <p>
+                    ${step.description}
+                </p>
+
+                <h3>
+                    What to Learn
+                </h3>
+
+                <div class="topics">
+
+                    ${topicsHTML}
+
+                </div>
+
+            </div>
+
+        `;
+
+    });
+
+}
+
+</script>
+
+</body>
+
+</html>

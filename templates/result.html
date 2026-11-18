@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Resume Analysis</title>
+    <!----
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+         -->
+    <style>
+
+        body{
+            margin:0;
+            padding:40px;
+            background:#f4f7fb;
+            font-family:Arial,sans-serif;
+        }
+
+        .container{
+            width:95%;
+            max-width:1200px;
+            margin:auto;
+        }
+
+        .result-card{
+            width:100%;
+            background:white;
+            padding:40px;
+            border-radius:15px;
+            box-shadow:0 0 20px rgba(0,0,0,.15);
+        }
+
+        h1{
+            text-align:center;
+            color:#2c3e50;
+            margin-bottom:10px;
+        }
+
+        h2{
+            text-align:center;
+            color:#0077ff;
+            margin-bottom:30px;
+        }
+
+        .score{
+            text-align:center;
+            font-size:34px;
+            font-weight:bold;
+            color:green;
+            margin-bottom:30px;
+        }
+
+        .analysis{
+            background:#f8f8f8;
+            padding:25px;
+            border-radius:10px;
+            line-height:1.8;
+            white-space:pre-wrap;
+            text-align:left;
+            font-size:17px;
+        }
+
+        .buttons{
+            text-align:center;
+            margin-top:35px;
+        }
+
+        .btn{
+            display:inline-block;
+            background:#0077ff;
+            color:white;
+            text-decoration:none;
+            padding:14px 28px;
+            border-radius:8px;
+            margin:10px;
+            font-size:17px;
+            font-weight:bold;
+            transition:.3s;
+        }
+
+        .btn:hover{
+            background:#0056d6;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="result-card">
+
+        <h1>🤖 AI Resume Analysis</h1>
+
+        <h2>Welcome {{ username }}</h2>
+
+        <div class="score">
+            Resume Analysis Report
+        </div>
+
+        <div class="analysis">
+    {{ analysis | safe }}
+</div>
+
+        <div class="buttons">
+
+            <a href="/dashboard" class="btn">
+                🏠 Back to Dashboard
+            </a>
+
+            <a href="/download_report" class="btn">
+                📄 Download PDF Report
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Resume Analyzer</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+
+    <div class="sidebar">
+
+        <h2>Career Checker</h2>
+
+        <a href="/dashboard"
+           class="{% if request.path == '/dashboard' %}active{% endif %}">
+            <i class="fa-solid fa-house"></i>
+            <span>Dashboard</span>
+        </a>
+
+        <a href="/resume"
+           class="{% if request.path == '/resume' %}active{% endif %}">
+            <i class="fa-solid fa-file"></i>
+            <span>Resume Analyzer</span>
+        </a>
+
+        <a href="/degree_compare"
+           class="{% if request.path == '/degree_compare' %}active{% endif %}">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span>Compare Degrees</span>
+        </a>
+
+        <a href="/career_advisor"
+           class="{% if request.path == '/career_advisor' %}active{% endif %}">
+            <i class="fa-solid fa-robot"></i>
+            <span>AI Career Advisor</span>
+        </a>
+
+        <a href="/job_market"
+           class="{% if request.path == '/job_market' %}active{% endif %}">
+            <i class="fa-solid fa-chart-column"></i>
+            <span>Job Market Trends</span>
+        </a>
+
+        <a href="/roadmap"
+           class="{% if request.path == '/roadmap' %}active{% endif %}">
+            <i class="fa-solid fa-map"></i>
+            <span>Learning Roadmap</span>
+        </a>
+
+        <a href="/career-gap"
+           class="{% if request.path == '/career-gap' %}active{% endif %}">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Career Gap Analyzer</span>
+        </a>
+
+        <a href="/profile"
+           class="{% if request.path == '/profile' %}active{% endif %}">
+            <i class="fa-solid fa-user"></i>
+            <span>Profile</span>
+        </a>
+
+        <a href="/logout">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Logout</span>
+        </a>
+
+    </div>
+
+    <!-- Main Content -->
+
+    <div class="main">
+
+        <h1>Resume Analyzer</h1>
+
+        <p>Upload your resume and let AI analyze it based on your selected career role.</p>
+
+        <div class="upload-box">
+
+            <form
+                action="/resume"
+                method="POST"
+                enctype="multipart/form-data">
+
+                <label><b>Select Target Job Role</b></label>
+
+                <br><br>
+
+                <select name="job_role" required>
+
+                    <option value="">-- Select Job Role --</option>
+
+                    <option value="Java Developer">Java Developer</option>
+
+                    <option value="Python Developer">Python Developer</option>
+
+                    <option value="Full Stack Developer">Full Stack Developer</option>
+
+                    <option value="Frontend Developer">Frontend Developer</option>
+
+                    <option value="Backend Developer">Backend Developer</option>
+
+                    <option value="Software Engineer">Software Engineer</option>
+
+                    <option value="Data Analyst">Data Analyst</option>
+
+                    <option value="Data Scientist">Data Scientist</option>
+
+                    <option value="None">None</option>
+
+                </select>
+
+                <br><br>
+
+                <label><b>Select Resume (PDF)</b></label>
+
+                <br><br>
+
+                <input
+                    type="file"
+                    name="resume"
+                    accept=".pdf"
+                    required>
+
+                <br><br>
+
+                <button type="submit">
+                    🚀 Analyze Resume
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
