@@ -14,7 +14,7 @@ from reportlab.lib.styles import getSampleStyleSheet
 # Flask App
 # ----------------------------
 app = Flask(__name__)
-app.secret_key = "career_checker_secret"
+app.secret_key = os.getenv("SECRET_KEY", "career_checker_secret")
 
 UPLOAD_FOLDER = "static/uploads"
 REPORT_FOLDER = "static/reports"
@@ -28,10 +28,12 @@ os.makedirs(REPORT_FOLDER, exist_ok=True)
 # ----------------------------
 # MongoDB
 # ----------------------------
-client = MongoClient("mongodb://localhost:27017/")
+client = MongoClient(
+    os.getenv("MONGODB_URI", "mongodb://localhost:27017/")
+)
+
 db = client["career_checker"]
 users = db["users"]
-
 # ----------------------------
 # Home
 # ----------------------------
